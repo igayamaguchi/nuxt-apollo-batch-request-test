@@ -1,5 +1,7 @@
 import { ApolloServer, gql } from 'apollo-server'
 
+let num = 0
+
 const typeDefs = gql`
   type Noodle {
     name: String!
@@ -43,7 +45,7 @@ const meets = [
 const resolvers = {
   Query: {
     noodles: async () => {
-      console.log('noodles')
+      console.log(num++, ':noodles')
       return new Promise((resolve, reject) => {
         setTimeout(() => {
           resolve(noodles)
@@ -51,7 +53,7 @@ const resolvers = {
       })
     },
     breads: async () => {
-      console.log('breads')
+      console.log(num++, ':breads')
       return new Promise((resolve, reject) => {
         setTimeout(() => {
           resolve(breads)
@@ -59,7 +61,7 @@ const resolvers = {
       })
     },
     fruits: async () => {
-      console.log('fruits')
+      console.log(num++, ':fruits')
       return new Promise((resolve, reject) => {
         setTimeout(() => {
           resolve(fruits)
@@ -67,7 +69,7 @@ const resolvers = {
       })
     },
     meets: async () => {
-      console.log('meets')
+      console.log(num++, ':meets')
       return new Promise((resolve, reject) => {
         setTimeout(() => {
           resolve(meets)
