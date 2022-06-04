@@ -1,0 +1,8 @@
+query Index {
+  fruits {
+    name
+  }
+  meets {
+    name
+  }
+}
